@@ -1,0 +1,150 @@
+body{
+    background-image: url("/img/bg.png");
+	width: auto;
+	height:auto;
+}
+    table.pricing td, table.pricing th {
+        text-align: center;
+       padding: 0px 2px 0px 2px;
+        border: 1px;
+    }
+
+    table.pricing th {
+        background-color: rgb(230, 61, 61);
+        border: 1px solid rgb(114, 224, 114);
+        color: white;
+         font-family: 'Times New Roman', Times, serif
+    }
+    table.pricing td {
+        background-color: black;
+        border: 1px solid white;
+         font-size: 14px;
+        font-family: Arial;
+        color: white;
+    }
+    table.pricing td span {
+       color: #fa0909;
+         font-size: 15px;
+        font-style: italic;
+    }
+
+    table.pricing {
+        border: 0px;
+        border-spacing: 0px;
+    }
+
+    .cur_col {
+        background-color: rgb(209, 164, 68) !important;
+        border: 1px solid rgb(14, 11, 5) !important;
+        border-left: 0px solid #CFE3F9 !important;
+        border-right: 0px solid #CFE3F9 !important;
+    }
+
+    .cur_cell {
+        background-color: #0a0ae9 !important;
+        border: 0px solid #706d5e !important;
+        border: 0px solid rgb(11, 78, 150) !important;
+    }
+
+    .cur_row {
+        background-color: rgb(209, 164, 68) !important;
+        border: 1px solid rgb(10, 8, 2) !important;
+        border-top: 0px solid rgb(209, 164, 68) !important;
+        border-bottom: 0px solid rgb(209, 164, 68) !important;
+    }
+
+.frm {
+	float: right;
+    padding: 10% 20% 0px 0px; 
+    margin-top: 30px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box1 {
+  float: left;
+  width: 50%;
+  padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+  height: auto;
+}
+
+.box2 {
+  float: right;
+  width:50%;
+  padding-right: 0px;
+  padding-top: 0px;
+    padding-left: 0px;
+  height: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.bdt > thead > tr > th, .bdt > tbody > tr > td {
+	font-size: 13px;
+}
+
+.bdt tr:last-child td, .bdt tr:last-child th {
+    border-bottom: 2px solid #1b1916;
+}
+
+.bdt > tbody > tr > td, .bdt > tbody > tr > th, .bdt > tfoot > tr > td, .bdt > tfoot > tr > th, .bdt > thead > tr > td, .bdt > thead > tr > th {
+    border-color: #e6e7ed;
+    padding: 1px 0px 18px 53px;
+}
+.nota {
+    color: #fa0909
+}
+fieldset {
+    position: inherit;
+    border: none;
+    padding: 0;
+}
+legend {
+    float: left;
+    padding: 0;
+    margin-right: 5px;
+    width: 50px;
+    text-align: right;
+}
+label {
+    position: absolute;
+    left: -9999px;
+}
+
+#id{
+    width: 80px;
+    background-color: bisque;
+}
+#company{
+    width: auto;
+}
+#name{
+    width: auto;
+}
+
+#m{
+    width: 100px;
+}
+#s{
+    width: 100px;
+}
+
+#g{
+    width: 90px;
+    background-color: ghostwhite;
+    
+}
+
+.jumbotron{
+    height: 100px;
+    padding-bottom: 50px;
+    padding-top: 5px
+}

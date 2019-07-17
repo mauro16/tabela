@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <form class="form-inline">
+            <div class="container">
+                <button class="btn btn-success btn" type="submit">
+                    <small><i class="glyphicon glyphicon-export">Excel</i></small>
+                </button>
+                <br><br>
+                <input type="text" class="form-control mb-2 mr-sm-2" name="firma" id="firma" placeholder="Firma">
+                <input type="text" class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Name">
+                <input type="text" class="form-control mb-2 mr-sm-2" name="m" id="m" placeholder="Mundlich">
+                <input type="text" class="form-control mb-2 mr-sm-2" name="s" id="s" placeholder="Schriftlich">
+                <input type="text" class="form-control mb-2 mr-sm-2" name="g" id="g" placeholder="Gesamt">
+                <input type="button" class="btn btn-primary mb-2 btn-sm" value="Add" onclick="addHTMLTableRow();">
+
+                <input type="button" class="btn btn-danger mb-2 btn-sm" value="Edit"
+                    onclick="editHtmlTableSelectedRow()">
+
+                <input type="button" class="btn btn-warning mb-2 btn-sm" value="Delete" onclick="deleta()">
+            </div>
+
+        </form>
+
+    </div>
+    <div class="clearfix">
+
+        <div class="box1">
+
+            <div class="container col-sm-10">
+
+                <table class="table table-hover" id="table">
+                    <tr>
+                        <th scope="col">Firma</th>
+                        <th scope="col">Teilnehmer</th>
+                        <th scope="col">Mundlisch</th>
+                        <th scope="col">Schriftlich</th>
+                        <th class="nota" scope="col">Gesamt</th>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+        <div class="box2">
+            <table class="pricing" id="pricing">
+                <tr>
+                    <th style="width:5px;height:5px"></th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                    <th style="width:20px;">S</th>
+                </tr>
+
+                <tr id="firstRow">
+                    <th style="height:10">M</th>
+                    <td>#</td>
+                    <td class="cel1">A1a</td>
+                    <td>A1b</td>
+                    <td>A1<span>c</span></td>
+                    <td class="cel2">A2a</td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                    <td>C1<span>c</span></td>
+                    <td>C2<span>a</span></td>
+                    <td>C2<span>b</span></td>
+                    <td>C2<span>c</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1a</td>
+                    <td>A1a</td>
+                    <td>A1b</td>
+                    <td>A1<span>b</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>b</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>b</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>c</span></td>
+                    <td>A1<span>b</span></td>
+                    <td>A1<span>b</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A2<span>a</span></td>
+                    <td>A1<span>b</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A2<span>b</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A2<span>c</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A2<span>c</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A2<span>c</span></td>
+                    <td>A1<span>c</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>a</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>b</span></td>
+                    <td>A2<span>c</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>a</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>b</span></td>
+                    <td>B1<span>c</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>a</span></td>
+                    <td>B2<span>b</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>B2<span>c</span></td>
+                    <td>C1<span>a</span></td>
+                    <td>C1<span>b</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+                <tr>
+                    <th style="height:10">M</th>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                    <td>A1<span>a</span></td>
+                </tr>
+
+            </table>
+
+        </div>
+        <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/jquery.sortelements.js" type="text/javascript"></script>
+        <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
+</body>
+
+
+</html>
