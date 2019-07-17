@@ -16,9 +16,10 @@
     <div class="jumbotron">
         <form class="form-inline">
             <div class="container">
-                <button class="btn btn-success btn" type="submit">
-                    <small><i class="glyphicon glyphicon-export">Excel</i></small>
-                </button>
+                <input type="button" class="btn btn-danger mb-2 btn-sm"
+                    onclick="exportTableToExcel('table', 'Teilnehmer')" value="Export">
+
+
                 <br><br>
                 <input type="text" class="form-control mb-2 mr-sm-2" name="firma" id="firma" placeholder="Firma">
                 <input type="text" class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Name">
