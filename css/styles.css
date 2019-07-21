@@ -128,19 +128,26 @@ label {
 }
 #name{
     width: auto;
+    text-transform: capitalize;
 }
 
 #m{
     width: 100px;
+  
 }
 #s{
     width: 100px;
+   
 }
 
 #g{
     width: 90px;
     background-color: ghostwhite;
-    
+   
+}
+
+td {
+  cursor: pointer;
 }
 
 .jumbotron{

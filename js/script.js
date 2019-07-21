@@ -3,16 +3,19 @@ function inittbletohoverHighlight() {
     if (tbletohover == null) {
         return;
     }
+$(document).keydown(function (a) {
+    resultado = $('m').val();
+    key = (a.keyCode);
+})
 
     // detect cursor position
     for (var i = 0; i < tbletohover.rows.length; i++) {
         tbletohover.rows[i].row_index = i;
-     
+
         for (var j = 0; j < tbletohover.rows[i].cells.length; j++) {
             tbletohover.rows[i].cells[j].column_index = j;
             tbletohover.rows[i].cells[j].onmouseover = function () {
                 highlight(this.parentNode.row_index, this.column_index, 'on');
-                console.log(j)
             }
             tbletohover.rows[i].cells[j].onmouseout = function () {
                 highlight(this.parentNode.row_index, this.column_index, 'off');
@@ -79,16 +82,12 @@ var rIndex, table = document.getElementById("table")
 function checkEmptyInput() {
 
     var isEmpty = false;
-    txtFirma = document.getElementById("firma").value;
     txtName = document.getElementById("name").value;
     txtM = document.getElementById("m").value;
     txtS = document.getElementById("s").value;
     txtG = document.getElementById("g").value;
-    if (txtFirma === "") {
-        alert("Firma Name is empty!")
-        isEmpty = true;
-    }
-    else if (txtName === "") {
+
+    if (txtName === "") {
         alert("Name is empty!")
         isEmpty = true;
     }
@@ -121,18 +120,16 @@ function addHTMLTableRow() {
             cell2 = newRow.insertCell(1),
             cell3 = newRow.insertCell(2),
             cell4 = newRow.insertCell(3),
-            cell5 = newRow.insertCell(4),
-            txtFirma = document.getElementById("firma").value,
+
             txtName = document.getElementById("name").value,
             txtM = document.getElementById("m").value,
             txtS = document.getElementById("s").value,
             txtG = document.getElementById("g").value;
 
-        cell1.innerHTML = txtFirma;
-        cell2.innerHTML = txtName;
-        cell3.innerHTML = txtM;
-        cell4.innerHTML = txtS;
-        cell5.innerHTML = txtG;
+        cell1.innerHTML = txtName;
+        cell2.innerHTML = txtM;
+        cell3.innerHTML = txtS;
+        cell4.innerHTML = txtG;
         //chama a funcao para setar o evento para a nova linha
         selectRowInput()
     }
@@ -145,29 +142,26 @@ function selectRowInput() {
         table.rows[i].onclick = function () {
             //pegar a linha selecionada
             rIndex = this.rowIndex;
-            document.getElementById("firma").value = this.cells[0].innerHTML;
-            document.getElementById("name").value = this.cells[1].innerHTML;
-            document.getElementById("m").value = this.cells[2].innerHTML;
-            document.getElementById("s").value = this.cells[3].innerHTML;
-            document.getElementById("g").value = this.cells[4].innerHTML;
+            document.getElementById("name").value = this.cells[0].innerHTML;
+            document.getElementById("m").value = this.cells[1].innerHTML;
+            document.getElementById("s").value = this.cells[2].innerHTML;
+            document.getElementById("g").value = this.cells[3].innerHTML;
         };
     }
 }
 selectRowInput()
 
 function editHtmlTableSelectedRow() {
-    var txtFirma = document.getElementById("firma").value,
-        txtName = document.getElementById("name").value,
+    var txtName = document.getElementById("name").value,
         txtM = document.getElementById("m").value,
         txtS = document.getElementById("s").value,
         txtG = document.getElementById("g").value;
 
     if (!checkEmptyInput()) {
-        table.rows[rIndex].cells[0].innerHTML = txtFirma;
-        table.rows[rIndex].cells[1].innerHTML = txtName;
-        table.rows[rIndex].cells[2].innerHTML = txtM;
-        table.rows[rIndex].cells[3].innerHTML = txtS;
-        table.rows[rIndex].cells[4].innerHTML = txtG;
+        table.rows[rIndex].cells[0].innerHTML = txtName;
+        table.rows[rIndex].cells[1].innerHTML = txtM;
+        table.rows[rIndex].cells[2].innerHTML = txtS;
+        table.rows[rIndex].cells[3].innerHTML = txtG;
     }
 
 }
@@ -176,7 +170,6 @@ function deleta() {
     table.deleteRow(rIndex)
 
     //Limpa os campos
-    document.getElementById("firma").value = "";
     document.getElementById("name").value = "";
     document.getElementById("m").value = "";
     document.getElementById("s").value = "";
@@ -214,3 +207,5 @@ function exportTableToExcel(tableID, filename = '') {
         downloadLink.click();
     }
 }
+
+
