@@ -2,27 +2,27 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <div class="jumbotron">
+    
         <form class="form-inline">
             <div class="container">
+                    <span class="txt" id="txt" style="float: right; font-size: 16px;">txt</span>
+                    <span class="horaAtual" id="horaAtual" style="float: right; font-size: 16px;">hora</span>
+                    <span class="dataAtual" id="dataAtual" style="float: right; font-size: 22px; padding-right: 10px;">data</span>
                 <input type="button" class="btn btn-danger mb-2 btn-sm"
                     onclick="exportTableToExcel('table', 'Teilnehmer')" value="Export">
                 <br><br>
                 <input type="text" class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Name">
                 <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="m" id="m"
                     placeholder="Mundlich">
-                <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="s"
+                <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="sch"
                     placeholder="Schriftlich">
                 <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="g" id="g" placeholder="Gesamt">
                 <input type="button" class="btn btn-primary mb-2 btn-sm" value="Add" onclick="addHTMLTableRow();">
@@ -82,24 +82,24 @@
                 <tr id="firstRow">
                     <th style="height:10">M</th>
                     <td>#</td>
-                    <td id="row-m-a1a">A1<span>a</span></td>
-                    <td id="row-m-a1b">A1<span>b</span></td>
-                    <td id="row-m-a1c">A1<span>c</span></td>
-                    <td id="row-m-a2a">A2<span>a</span></td>
-                    <td id="row-m-a2b">A2<span>b</span></td>
-                    <td id="row-m-a2c">A2<span>c</span></td>
-                    <td id="row-m-b1a">B1<span>a</span></td>
-                    <td id="row-m-b1b">B1<span>b</span></td>
-                    <td id="row-m-b1c">B1<span>c</span></td>
-                    <td id="row-m-b2a">B2<span>a</span></td>
-                    <td id="row-m-b2b">B2<span>b</span></td>
-                    <td id="row-m-b2c">B2<span>c</span></td>
-                    <td id="row-m-c1a">C1<span>a</span></td>
-                    <td id="row-m-c1b">C1<span>b</span></td>
-                    <td id="row-m-c1c">C1<span>c</span></td>
-                    <td id="row-m-c2a">C2<span>a</span></td>
-                    <td id="row-m-c2b">C2<span>b</span></td>
-                    <td id="row-m-c2c">C2<span>c</span></td>
+                    <td class="row-m-a1a">A1<span>a</span></td>
+                    <td class="row-m-a1b">A1<span>b</span></td>
+                    <td class="row-m-a1c">A1<span>c</span></td>
+                    <td class="row-m-a2a">A2<span>a</span></td>
+                    <td class="row-m-a2b">A2<span>b</span></td>
+                    <td class="row-m-a2c">A2<span>c</span></td>
+                    <td class="row-m-b1a">B1<span>a</span></td>
+                    <td class="row-m-b1b">B1<span>b</span></td>
+                    <td class="row-m-b1c">B1<span>c</span></td>
+                    <td class="row-m-b2a">B2<span>a</span></td>
+                    <td class="row-m-b2b">B2<span>b</span></td>
+                    <td class="row-m-b2c">B2<span>c</span></td>
+                    <td class="row-m-c1a">C1<span>a</span></td>
+                    <td class="row-m-c1b">C1<span>b</span></td>
+                    <td class="row-m-c1c">C1<span>c</span></td>
+                    <td class="row-m-c2a">C2<span>a</span></td>
+                    <td class="row-m-c2b">C2<span>b</span></td>
+                    <td class="row-m-c2c">C2<span>c</span></td>
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
@@ -501,7 +501,7 @@
             </table>
 
         </div>
-        <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
+     
         <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/jquery.sortelements.js" type="text/javascript"></script>

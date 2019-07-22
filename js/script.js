@@ -1,66 +1,23 @@
-function inittbletohoverHighlight() {
+var dateAtualEL = document.querySelector('#dataAtual');
+var horaAtualEL = document.querySelector('#horaAtual');
+setInterval(() => {
+    var dt = new Date().toLocaleDateString('DE-de', {day: "2-digit", month: "long", year: "numeric"});
+    var hr = new Date().toLocaleTimeString('DE-de');
+    dateAtualEL.innerHTML= dt;
+    horaAtualEL.innerHTML= hr;
+}, 1000);
 
-    if (tbletohover == null) {
-        return;
-    }
-$(document).keydown(function (a) {
-    resultado = $('m').val();
-    key = (a.keyCode);
-})
+    let buttons = document.querySelectorAll('#firstRow > td');
 
-    // detect cursor position
-    for (var i = 0; i < tbletohover.rows.length; i++) {
-        tbletohover.rows[i].row_index = i;
+    buttons.forEach(btn=>{
+        btn.addEventListener('click', e => {
+            document.querySelector('.form-inline > .container > #sch').innerHTML = btn.className.replace("row-m-", "");
+           
+       
 
-        for (var j = 0; j < tbletohover.rows[i].cells.length; j++) {
-            tbletohover.rows[i].cells[j].column_index = j;
-            tbletohover.rows[i].cells[j].onmouseover = function () {
-                highlight(this.parentNode.row_index, this.column_index, 'on');
-            }
-            tbletohover.rows[i].cells[j].onmouseout = function () {
-                highlight(this.parentNode.row_index, this.column_index, 'off');
-            }
-        }
-    }
-}
+        });
+    })
 
-function highlight(row, col, state) {
-    if (row == 0 || col == 0) {
-        return;
-    }
-    for (var i = 0; i < tbletohover.rows.length; i++) {
-        if (state == 'off') {
-            for (var j = 0; j < tbletohover.rows[i].cells.length; j++) {
-                tbletohoverElement = tbletohover.rows[i].cells[j]
-                $(tbletohoverElement).removeClass('cur_col');
-            }
-        }
-        if (state == 'on') {
-            tbletohoverElement = tbletohover.rows[i].cells[col]
-            $(tbletohoverElement).addClass('cur_col');
-        }
-    }
-
-    for (var i = 0; i < tbletohover.rows[row].cells.length; i++) {
-        if (state == 'on') {
-            tbletohoverElement = tbletohover.rows[row].cells[i]
-            $(tbletohoverElement).addClass('cur_row');
-            tbletohoverElement = tbletohover.rows[row].cells[col]
-            $(tbletohoverElement).removeClass('cur_row');
-            $(tbletohoverElement).removeClass('cur_col');
-            $(tbletohoverElement).addClass('cur_cell');
-        }
-        if (state == 'off') {
-            tbletohoverElement = tbletohover.rows[row].cells[i]
-            $(tbletohoverElement).removeClass('cur_row');
-            tbletohoverElement = tbletohover.rows[row].cells[col]
-            $(tbletohoverElement).removeClass('cur_cell');
-        }
-    }
-}
-
-var tbletohover = document.getElementById('pricing');
-inittbletohoverHighlight();
 
 
 $(document).ready(function () {
