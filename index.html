@@ -10,19 +10,19 @@
 
 <body>
     <div class="jumbotron">
-    
+
         <form class="form-inline">
             <div class="container">
-                    <span class="txt" id="txt" style="float: right; font-size: 16px;">txt</span>
-                    <span class="horaAtual" id="horaAtual" style="float: right; font-size: 16px;">hora</span>
-                    <span class="dataAtual" id="dataAtual" style="float: right; font-size: 22px; padding-right: 10px;">data</span>
+                <span class="horaAtual" id="horaAtual" style="float: right; font-size: 16px;">hora</span>
+                <span class="dataAtual" id="dataAtual"
+                    style="float: right; font-size: 22px; padding-right: 10px;">data</span>
                 <input type="button" class="btn btn-danger mb-2 btn-sm"
                     onclick="exportTableToExcel('table', 'Teilnehmer')" value="Export">
                 <br><br>
                 <input type="text" class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Name">
                 <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="m" id="m"
                     placeholder="Mundlich">
-                <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="sch"
+                <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="s"
                     placeholder="Schriftlich">
                 <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="g" id="g" placeholder="Gesamt">
                 <input type="button" class="btn btn-primary mb-2 btn-sm" value="Add" onclick="addHTMLTableRow();">
@@ -54,8 +54,10 @@
             </div>
 
         </div>
+
+        <!--TABELA NOTAS-->
         <div class="box2">
-            <table class="pricing" id="pricing">
+            <table class='searchtbl' style="background-color: black">
                 <tr>
                     <th style="width:5px;height:5px"></th>
                     <th style="width:20px;">S</th>
@@ -81,29 +83,29 @@
 
                 <tr id="firstRow">
                     <th style="height:10">M</th>
-                    <td>#</td>
-                    <td class="row-m-a1a">A1<span>a</span></td>
-                    <td class="row-m-a1b">A1<span>b</span></td>
-                    <td class="row-m-a1c">A1<span>c</span></td>
-                    <td class="row-m-a2a">A2<span>a</span></td>
-                    <td class="row-m-a2b">A2<span>b</span></td>
-                    <td class="row-m-a2c">A2<span>c</span></td>
-                    <td class="row-m-b1a">B1<span>a</span></td>
-                    <td class="row-m-b1b">B1<span>b</span></td>
-                    <td class="row-m-b1c">B1<span>c</span></td>
-                    <td class="row-m-b2a">B2<span>a</span></td>
-                    <td class="row-m-b2b">B2<span>b</span></td>
-                    <td class="row-m-b2c">B2<span>c</span></td>
-                    <td class="row-m-c1a">C1<span>a</span></td>
-                    <td class="row-m-c1b">C1<span>b</span></td>
-                    <td class="row-m-c1c">C1<span>c</span></td>
-                    <td class="row-m-c2a">C2<span>a</span></td>
-                    <td class="row-m-c2b">C2<span>b</span></td>
-                    <td class="row-m-c2c">C2<span>c</span></td>
+                    <td></td>
+                    <td class="row-s">A1<span>a</span></td>
+                    <td class="row-s">A1<span>b</span></td>
+                    <td class="row-s">A1<span>c</span></td>
+                    <td class="row-s">A2<span>a</span></td>
+                    <td class="row-s">A2<span>b</span></td>
+                    <td class="row-s">A2<span>c</span></td>
+                    <td class="row-s">B1<span>a</span></td>
+                    <td class="row-s">B1<span>b</span></td>
+                    <td class="row-s">B1<span>c</span></td>
+                    <td class="row-s">B2<span>a</span></td>
+                    <td class="row-s">B2<span>b</span></td>
+                    <td class="row-s">B2<span>c</span></td>
+                    <td class="row-s">C1<span>a</span></td>
+                    <td class="row-s">C1<span>b</span></td>
+                    <td class="row-s">C1<span>c</span></td>
+                    <td class="row-s">C2<span>a</span></td>
+                    <td class="row-s">C2<span>b</span></td>
+                    <td class="row-s">C2<span>c</span></td>
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-s-b1a">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>b</span></td>
                     <td>A1<span>b</span></td>
@@ -125,7 +127,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>b</span></td>
+                    <td class="row-m">A1<span>b</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>b</span></td>
                     <td>A1<span>c</span></td>
@@ -147,7 +149,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>c</span></td>
+                    <td class="row-m">A1<span>c</span></td>
                     <td>A1<span>b</span></td>
                     <td>A1<span>b</span></td>
                     <td>A1<span>c</span></td>
@@ -169,7 +171,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A2<span>a</span></td>
+                    <td class="row-m">A2<span>a</span></td>
                     <td>A1<span>b</span></td>
                     <td>A1<span>c</span></td>
                     <td>A1<span>c</span></td>
@@ -191,7 +193,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A2<span>b</span></td>
+                    <td class="row-m">A2<span>b</span></td>
                     <td>A1<span>c</span></td>
                     <td>A1<span>c</span></td>
                     <td>A2<span>a</span></td>
@@ -213,7 +215,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A2<span>c</span></td>
+                    <td class="row-m">A2<span>c</span></td>
                     <td>A1<span>c</span></td>
                     <td>A2<span>a</span></td>
                     <td>A2<span>a</span></td>
@@ -235,7 +237,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A2<span>c</span></td>
+                    <td class="row-m">A2<span>c</span></td>
                     <td>A1<span>c</span></td>
                     <td>A2<span>a</span></td>
                     <td>A2<span>a</span></td>
@@ -257,7 +259,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A2<span>c</span></td>
+                    <td class="row-m">A2<span>c</span></td>
                     <td>A1<span>c</span></td>
                     <td>A2<span>a</span></td>
                     <td>A2<span>a</span></td>
@@ -279,7 +281,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -301,7 +303,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -323,7 +325,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -345,7 +347,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -367,7 +369,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -389,7 +391,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -411,7 +413,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -433,7 +435,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -455,7 +457,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -477,7 +479,7 @@
                 </tr>
                 <tr>
                     <th style="height:10">M</th>
-                    <td id="row-m">A1<span>a</span></td>
+                    <td class="row-m">A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
@@ -497,11 +499,9 @@
                     <td>A1<span>a</span></td>
                     <td>A1<span>a</span></td>
                 </tr>
-
             </table>
-
         </div>
-     
+
         <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/jquery.sortelements.js" type="text/javascript"></script>
@@ -512,6 +512,5 @@
         <script src="js/script.js"></script>
         <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
 </body>
-
 
 </html>

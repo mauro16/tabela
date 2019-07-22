@@ -3,32 +3,28 @@ body{
 	width: auto;
 	height:auto;
 }
-    table.pricing td, table.pricing th {
+    table.searchtbl td, table.pricing th {
         text-align: center;
        padding: 0px 2px 0px 2px;
         border: 1px;
     }
 
-    table.pricing th {
+    table.searchtbl th {
         background-color: rgb(230, 61, 61);
         border: 1px solid rgb(114, 224, 114);
         color: white;
          font-family: 'Times New Roman', Times, serif
     }
-    table.pricing td {
-        background-color: black;
+    table.searchtbl td {
         border: 1px solid white;
          font-size: 14px;
         font-family: Arial;
+    }
+   .highlighted {
         color: white;
     }
-    table.pricing td span {
-       color: #fa0909;
-         font-size: 15px;
-        font-style: italic;
-    }
 
-    table.pricing {
+    table.searchtbl {
         border: 0px;
         border-spacing: 0px;
     }
@@ -52,6 +48,7 @@ body{
         border-top: 0px solid rgb(209, 164, 68) !important;
         border-bottom: 0px solid rgb(209, 164, 68) !important;
     }
+
 
 .frm {
 	float: right;

@@ -1,24 +1,11 @@
 var dateAtualEL = document.querySelector('#dataAtual');
 var horaAtualEL = document.querySelector('#horaAtual');
 setInterval(() => {
-    var dt = new Date().toLocaleDateString('DE-de', {day: "2-digit", month: "long", year: "numeric"});
+    var dt = new Date().toLocaleDateString('DE-de', { day: "2-digit", month: "long", year: "numeric" });
     var hr = new Date().toLocaleTimeString('DE-de');
-    dateAtualEL.innerHTML= dt;
-    horaAtualEL.innerHTML= hr;
+    dateAtualEL.innerHTML = dt;
+    horaAtualEL.innerHTML = hr;
 }, 1000);
-
-    let buttons = document.querySelectorAll('#firstRow > td');
-
-    buttons.forEach(btn=>{
-        btn.addEventListener('click', e => {
-            document.querySelector('.form-inline > .container > #sch').innerHTML = btn.className.replace("row-m-", "");
-           
-       
-
-        });
-    })
-
-
 
 $(document).ready(function () {
     $('#tbl').bdt({
@@ -165,4 +152,74 @@ function exportTableToExcel(tableID, filename = '') {
     }
 }
 
+//HORIZONTAL
+$(document).ready(function (e) {
+    $("#m").keyup(function () {
 
+        if ($(this).val() == "") {
+            $(".searchtbl").find("tr").not("tr:first").find("td").removeClass('highlighted');
+            return false;
+        }
+        var data = this.value.toUpperCase().split(" ");
+        $(".searchtbl").find("tr").not("tr:first").find(".row-m").each(function (index, elem) {
+            var $elem = $(elem);
+            for (var d = 0; d < data.length; ++d) {
+                // Highlight
+                if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
+                    $elem.addClass('highlighted');
+                } else {
+                    $elem.removeClass('highlighted');
+                }
+                //console.log();
+
+                if ($elem.find(".inputType").length == 1) {
+
+                    if ($elem.find(".inputType").val().toUpperCase().indexOf(data[d]) != -1) {
+                        $elem.addClass('highlighted');
+                        $elem.find(".inputType").addClass('highlighted');
+                    } else {
+                        $elem.removeClass('highlighted');
+                        $elem.find(".inputType").removeClass('highlighted');
+                    }
+                }
+
+            }
+        })
+    })
+});
+
+//VERTICAL
+$(document).ready(function (e) {
+    $("#s").keyup(function () {
+
+        if ($(this).val() == "") {
+            $(".searchtbl").find("tr").not("tr:first").find("td").removeClass('highlighted');
+            return false;
+        }
+        var data = this.value.toUpperCase().split(" ");
+        $(".searchtbl").find("tr").not("tr:first").find(".row-s").each(function (index, elem) {
+            var $elem = $(elem);
+            for (var d = 0; d < data.length; ++d) {
+                // Highlight
+                if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
+                    $elem.addClass('highlighted');
+                } else {
+                    $elem.removeClass('highlighted');
+                }
+                //console.log();
+
+                if ($elem.find(".inputType").length == 1) {
+
+                    if ($elem.find(".inputType").val().toUpperCase().indexOf(data[d]) != -1) {
+                        $elem.addClass('highlighted');
+                        $elem.find(".inputType").addClass('highlighted');
+                    } else {
+                        $elem.removeClass('highlighted');
+                        $elem.find(".inputType").removeClass('highlighted');
+                    }
+                }
+
+            }
+        })
+    })
+});
