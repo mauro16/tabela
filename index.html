@@ -13,38 +13,36 @@
     <div class="jumbotron">
 
         <div class="date">
-            <span id="dataAtual"></span><br>
+            <span id="dataAtual">Updating....</span><br>
             <div class="time">
-                <span id="horaAtual"></span>
+                <span id="horaAtual"></span><br>
+            </div>
+            <div class="msg">
+                <span id="msg"></span>
             </div>
         </div>
 
-        <form class="form-inline">
+        <form class="form-inline" onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
 
             <div class="container">
-                <input type="button" class="btn btn-danger mb-2 btn-sm"
-                    onclick="exportTableToExcel('table', 'Teilnehmer')" value="Export">
-                <br><br>
-                <input type="text" class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Name">
 
-                <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="m" id="m"
-                    placeholder="Mundlich" onkeyup="VerticalM()">
+                <button type="button" class="btn btn-dark btn-circle btn-lg" style="width: auto; cursor: default;">
+                    <br><br>
+                    <input type="text" class="form-control mb-2 mr-sm-2" name="name" id="name" placeholder="Name"
+                        required>
 
-                <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="s"
-                    placeholder="Schriftlich" onkeyup="HorizonzalS()">
+                    <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="m" id="m"
+                        placeholder="Mundlich" onkeyup="VerticalM()" required>
 
-                <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="g" id="g">
+                    <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="s"
+                        placeholder="Schriftlich" onkeyup="HorizonzalS()" required>
 
-                <input type="button" class="btn btn-primary mb-2 btn-sm" value="Add" onclick="addHTMLTableRow();">
+                    <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="g" id="g" required>
 
-                <input type="button" class="btn btn-danger mb-2 btn-sm" value="Edit"
-                    onclick="editHtmlTableSelectedRow()">
+                    <!--MENUS-->
+                    <input type="submit" class="btn btn-primary mb-2 btn-sm" value="Submit">
 
-
-                <input type="button" class="btn btn-warning mb-2 btn-sm" value="Delete" onclick="deleta()">
             </div>
-
-
         </form>
 
     </div>
@@ -53,14 +51,25 @@
         <div class="box1">
 
             <div class="container col-sm-10">
+                <!--Botao pesquisar-->
+                <input type="search" class="form-control mb-2 mr-sm-2 inline" id="txtBuscar" style="width: auto;"
+                    placeholder="Search">
+                <!--BUTTON EXPORT EXCEL-->
+                <input type="button" class="btn btn-info mb-2 btn-circle btn-sm fas fa-file" id="btnExport"
+                    value="Export to Excel" onclick="exportTableToExcel('table', 'Teilnehmer')">
+                <table class="table table-dark table-hover" id="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Teilnehmer</th>
+                            <th scope="col">Mundlisch</th>
+                            <th scope="col">Schriftlich</th>
+                            <th class="nota" scope="col">Gesamt</th>
+                            <th>Menu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                <table class="table table-hover" id="table">
-                    <tr>
-                        <th scope="col">Teilnehmer</th>
-                        <th scope="col">Mundlisch</th>
-                        <th scope="col">Schriftlich</th>
-                        <th class="nota" scope="col">Gesamt</th>
-                    </tr>
+                    </tbody>
 
                 </table>
             </div>

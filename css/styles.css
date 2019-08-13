@@ -162,7 +162,7 @@ td {
     width: auto;
 }
 .date{
-    font-size: 30px;
+    font-size: 50px;
     float: right;
     padding-right: 50px;
     color: rgb(62, 71, 62);
@@ -173,11 +173,19 @@ td {
     font-size: 20px;
     float: right;
     padding-bottom: 0px;
-    padding-right: 40px;
+    padding-right: 50px;
     color: rgb(97, 100, 77);
     font-family: 'Times New Roman', Times, serif;
 }
 
+.msg{
+    font-size: 20px;
+    float: right;
+    padding-bottom: 0px;
+    padding-right: 70px;
+    color: rgb(97, 100, 77);
+    font-family: 'Times New Roman', Times, serif;
+}
 .btnShow{
     height: 14px;
     width: 20px;
