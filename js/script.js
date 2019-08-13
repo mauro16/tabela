@@ -1,3 +1,9 @@
+
+txtM = document.getElementById("m").value,
+    txtS = document.getElementById("s").value,
+    txtG = document.getElementById("g").value;
+
+//GET DATE AND TIME
 var dateAtualEL = document.querySelector('#dataAtual');
 var horaAtualEL = document.querySelector('#horaAtual');
 setInterval(() => {
@@ -6,6 +12,7 @@ setInterval(() => {
     dateAtualEL.innerHTML = dt;
     horaAtualEL.innerHTML = hr;
 }, 1000);
+//*END* GET DATE AND TIME
 
 $(document).ready(function () {
     $('#tbl').bdt({
@@ -21,7 +28,7 @@ $(document).on("click", ".cel1", ".cel2", function () {
 });
 
 
-//Varial Global
+//INPUT TEXT VALIDATION
 var rIndex, table = document.getElementById("table")
 function checkEmptyInput() {
 
@@ -49,10 +56,9 @@ function checkEmptyInput() {
     }
     return isEmpty;
 }
+//END INPUT TEXT VALIDATION
 
-
-
-//Add rows
+//ADD ROWS
 function addHTMLTableRow() {
     //Pega a table apelo ID
     //cria uma nova linha e uma nova celula
@@ -78,7 +84,9 @@ function addHTMLTableRow() {
         selectRowInput()
     }
 }
+//END ADD ROWS
 
+//SELECT ROW INPUT
 function selectRowInput() {
 
 
@@ -94,7 +102,9 @@ function selectRowInput() {
     }
 }
 selectRowInput()
+//END SELECT ROW INPUT
 
+//EDIT TABLE SELECTED ROW
 function editHtmlTableSelectedRow() {
     var txtName = document.getElementById("name").value,
         txtM = document.getElementById("m").value,
@@ -109,7 +119,9 @@ function editHtmlTableSelectedRow() {
     }
 
 }
+//END EDIT TABLE SELECTED ROW
 
+//DELETE 
 function deleta() {
     table.deleteRow(rIndex)
 
@@ -119,6 +131,7 @@ function deleta() {
     document.getElementById("s").value = "";
     document.getElementById("g").value = "";
 }
+// END DELETE
 
 //Export Table to Excel
 function exportTableToExcel(tableID, filename = '') {
@@ -151,75 +164,94 @@ function exportTableToExcel(tableID, filename = '') {
         downloadLink.click();
     }
 }
+//End Export Table to Excel
 
-//HORIZONTAL
-$(document).ready(function (e) {
-    $("#m").keyup(function () {
 
-        if ($(this).val() == "") {
-            $(".searchtbl").find("tr").not("tr:first").find("td").removeClass('highlighted');
-            return false;
-        }
-        var data = this.value.toUpperCase().split(" ");
-        $(".searchtbl").find("tr").not("tr:first").find(".row-m").each(function (index, elem) {
-            var $elem = $(elem);
-            for (var d = 0; d < data.length; ++d) {
-                // Highlight
-                if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
-                    $elem.addClass('highlighted');
-                } else {
-                    $elem.removeClass('highlighted');
-                }
-                //console.log();
 
-                if ($elem.find(".inputType").length == 1) {
+//VERTICAL INPUT TEXT "TxtMundlich"
+function VerticalM() {
+    $(document).ready(function (e) {
+        $("#m").keyup(function () {
 
-                    if ($elem.find(".inputType").val().toUpperCase().indexOf(data[d]) != -1) {
+            if ($(this).val() == "") {
+                $(".searchtbl").find("tr").not("tr:first").find("td").removeClass('highlighted');
+                return false;
+            }
+            var data = this.value.toUpperCase().split(" ");
+            $(".searchtbl").find("tr").not("tr:first").find(".row-m").each(function (index, elem) {
+                var $elem = $(elem);
+                for (var d = 0; d < data.length; ++d) {
+                    // Highlight
+                    if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
                         $elem.addClass('highlighted');
-                        $elem.find(".inputType").addClass('highlighted');
                     } else {
                         $elem.removeClass('highlighted');
-                        $elem.find(".inputType").removeClass('highlighted');
                     }
-                }
+                    //console.log();
 
-            }
+                    if ($elem.find(".inputType").length == 1) {
+
+                        if ($elem.find(".inputType").val().toUpperCase().indexOf(data[d]) != -1) {
+                            $elem.addClass('highlighted');
+                            $elem.find(".inputType").addClass('highlighted');
+                        } else {
+                            $elem.removeClass('highlighted');
+                            $elem.find(".inputType").removeClass('highlighted');
+                        }
+                    }
+
+                }
+            })
         })
-    })
-});
+    });
+}
+// END VERTICAL INPUT TEXT "TxtMundlich"
 
-//VERTICAL
-$(document).ready(function (e) {
-    $("#s").keyup(function () {
+//HORIZONTAL INPUT TEXT "TxtSchriftlich"
+function HorizonzalS() {
+    $(document).ready(function (e) {
+        $("#s").keyup(function () {
 
-        if ($(this).val() == "") {
-            $(".searchtbl").find("tr").not("tr:first").find("td").removeClass('highlighted');
-            return false;
-        }
-        var data = this.value.toUpperCase().split(" ");
-        $(".searchtbl").find("tr").not("tr:first").find(".row-s").each(function (index, elem) {
-            var $elem = $(elem);
-            for (var d = 0; d < data.length; ++d) {
-                // Highlight
-                if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
-                    $elem.addClass('highlighted');
-                } else {
-                    $elem.removeClass('highlighted');
-                }
-                //console.log();
-
-                if ($elem.find(".inputType").length == 1) {
-
-                    if ($elem.find(".inputType").val().toUpperCase().indexOf(data[d]) != -1) {
+            if ($(this).val() == "") {
+                $(".searchtbl").find("tr").not("tr:first").find("td").removeClass('highlighted');
+                return false;
+            }
+            var data = this.value.toUpperCase().split(" ");
+            $(".searchtbl").find("tr").not("tr:first").find(".row-s").each(function (index, elem) {
+                var $elem = $(elem);
+                for (var d = 0; d < data.length; ++d) {
+                    // Highlight
+                    if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
                         $elem.addClass('highlighted');
-                        $elem.find(".inputType").addClass('highlighted');
                     } else {
                         $elem.removeClass('highlighted');
-                        $elem.find(".inputType").removeClass('highlighted');
                     }
-                }
+                    //console.log();
 
-            }
+                    if ($elem.find(".inputType").length == 1) {
+
+                        if ($elem.find(".inputType").val().toUpperCase().indexOf(data[d]) != -1) {
+                            $elem.addClass('highlighted');
+                            $elem.find(".inputType").addClass('highlighted');
+                        } else {
+                            $elem.removeClass('highlighted');
+                            $elem.find(".inputType").removeClass('highlighted');
+                        }
+                    }
+
+                }
+            })
         })
-    })
+    });
+}
+//END HORIZONTAL INPUT TEXT "TxtSchriftlich"
+
+//TABLE ARRAY
+var tableInfo = Array.prototype.map.call(document.querySelectorAll('.searchtbl tr'), function (tr) {
+    return Array.prototype.map.call(tr.querySelectorAll('td'), function (td) {
+        return td.innerText;
+    });
+
 });
+console.log(tableInfo)
+//END TABLE ARRAY

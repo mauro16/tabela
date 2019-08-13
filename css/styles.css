@@ -16,7 +16,7 @@ body{
          font-family: 'Times New Roman', Times, serif
     }
     table.searchtbl td {
-        border: 1px solid white;
+        border: 1px solid silver;
          font-size: 14px;
         font-family: Arial;
     }
@@ -95,6 +95,7 @@ body{
 .bdt > tbody > tr > td, .bdt > tbody > tr > th, .bdt > tfoot > tr > td, .bdt > tfoot > tr > th, .bdt > thead > tr > td, .bdt > thead > tr > th {
     border-color: #e6e7ed;
     padding: 1px 0px 18px 53px;
+
 }
 .nota {
     color: #fa0909
@@ -130,17 +131,17 @@ label {
 
 #m{
     width: 100px;
-  
+    text-transform: capitalize;
 }
 #s{
     width: 100px;
-   
+     text-transform: capitalize;
 }
 
 #g{
     width: 90px;
     background-color: ghostwhite;
-   
+      text-transform: capitalize;
 }
 
 td {
@@ -148,7 +149,37 @@ td {
 }
 
 .jumbotron{
-    height: 100px;
+    height: 120px;
     padding-bottom: 50px;
     padding-top: 5px
+}
+
+.dateTime{
+    float: right;
+    padding: 20px 50px 0px 0px;
+    background-color: #fa0909;
+    height: auto;
+    width: auto;
+}
+.date{
+    font-size: 30px;
+    float: right;
+    padding-right: 50px;
+    color: rgb(62, 71, 62);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.time{
+    font-size: 20px;
+    float: right;
+    padding-bottom: 0px;
+    padding-right: 40px;
+    color: rgb(97, 100, 77);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btnShow{
+    height: 14px;
+    width: 20px;
+    padding-top: 0px;
 }
