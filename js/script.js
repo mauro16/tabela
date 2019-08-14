@@ -154,7 +154,8 @@ function exportTableToExcel(tableID, filename = '') {
 
 
 
-//VERTICAL INPUT TEXT "TxtMundlich"
+///VERTICAL INPUT TEXT "TxtMundlich"
+var Vindex, Hindex;
 function VerticalM() {
     $(document).ready(function (e) {
         $("#m").keyup(function () {
@@ -170,6 +171,7 @@ function VerticalM() {
                     // Highlight
                     if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
                         $elem.addClass('highlighted');
+                        Vindex = $elem.parent().index()
                     } else {
                         $elem.removeClass('highlighted');
                     }
@@ -209,6 +211,7 @@ function HorizonzalS() {
                     // Highlight
                     if ($elem.text().toUpperCase().indexOf(data[d]) != -1) {
                         $elem.addClass('highlighted');
+                        Hindex = $elem.index()
                     } else {
                         $elem.removeClass('highlighted');
                     }
@@ -233,6 +236,7 @@ function HorizonzalS() {
 //END HORIZONTAL INPUT TEXT "TxtSchriftlich"
 
 // Function to observe the inputs and take the intersection
+
 $('#m, #s').on('blur', (e) => {
     linhas = document.querySelectorAll('.searchtbl tr');
     across = linhas[Vindex].cells[Hindex]
@@ -240,7 +244,10 @@ $('#m, #s').on('blur', (e) => {
     $(across).addClass("highlighted");
 })
 
+
+
 //Botao Pesquisar
+
 $(document).ready(function () {
     $("#txtBuscar").on("keyup", function () {
         var value = $(this).val().toLowerCase();
@@ -249,3 +256,6 @@ $(document).ready(function () {
         });
     });
 });
+
+
+
