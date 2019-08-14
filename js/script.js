@@ -35,8 +35,8 @@ function insertNewRecord(data) {
     cell4.innerHTML = data.g;
 
     cell4 = newRow.insertCell(4);
-    cell4.innerHTML = `<button type="button" onClick="onEdit(this)" class="btn btn-primary">Edit</button>
-                       <button type="button" onClick="onDelete(this)" class="btn btn-danger">Delete</button> `;
+    cell4.innerHTML = `<button type="button" onClick="onEdit(this)" class="btn btn-primary btn-sm">Edit</button>
+                       <button type="button" onClick="onDelete(this)" class="btn btn-danger btn-sm">Delete</button> `;
 }
 
 function resetForm() {
@@ -86,24 +86,21 @@ setInterval(() => {
     dateAtualEL.innerHTML = dt;
     horaAtualEL.innerHTML = hr;
 
-    if (hr < 5) {
-        dia.innerHTML = "Guten Abend";
+    //Messagem Saudacoes
+    hr = new Date();
+    hour = hr.getHours();
+    if (hour < 12) {
+        dia.innerHTML = "Guten Morgen!";
     }
     else
-        if (hr < 8) {
-            dia.innerHTML = "guten morgen!";
+        if (hour < 18) {
+            dia.innerHTML = "Guten Tag!";
         }
-        else
-            if (hr < 12) {
-                dia.innerHTML = "guten morgen!";
-            }
-            else
-                if (hr < 18) {
-                    dia.innerHTML = "Guten nachmittag!";
-                }
-                else {
-                    dia.innerHTML = "Guten Abend!";
-                }
+        else {
+            dia.innerHTML = "Guten Abend";
+            document.getElementById('sol').remove()
+        }
+
 }, 1000);
 
 //*END* GET DATE AND TIME
@@ -234,8 +231,8 @@ function HorizonzalS() {
     });
 }
 //END HORIZONTAL INPUT TEXT "TxtSchriftlich"
-// Function to observe the inputs and take the intersection
 
+// Function to observe the inputs and take the intersection
 $('#m, #s').on('blur', (e) => {
     linhas = document.querySelectorAll('.searchtbl tr');
     across = linhas[Vindex].cells[Hindex]

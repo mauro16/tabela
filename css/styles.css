@@ -3,6 +3,20 @@ body{
 	width: auto;
 	height:auto;
 }
+
+#table{
+    width: 100%; 
+    float: left;
+} 
+.searchtbl{
+   background-color: black; 
+   width: 50%;
+   float: right; 
+   margin-left: 10px;
+   margin-right: 10px; 
+   margin-top: 35px;
+
+}
     table.searchtbl td, table.pricing th {
         text-align: center;
        padding: 0px 2px 0px 2px;
@@ -16,9 +30,10 @@ body{
          font-family: 'Times New Roman', Times, serif
     }
     table.searchtbl td {
-        border: 1px solid silver;
+        border: 1px solid red;
          font-size: 14px;
         font-family: Arial;
+   
     }
    .highlighted {
         color: white;
@@ -58,24 +73,6 @@ body{
 
 * {
   box-sizing: border-box;
-}
-
-.box1 {
-  float: left;
-  width: 50%;
-  padding-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-  height: auto;
-}
-
-.box2 {
-  float: right;
-  width:50%;
-  padding-right: 0px;
-  padding-top: 0px;
-    padding-left: 0px;
-  height: auto;
 }
 
 .clearfix::after {
@@ -127,6 +124,7 @@ label {
 #name{
     width: auto;
     text-transform: capitalize;
+    
 }
 
 #m{
@@ -190,4 +188,12 @@ td {
     height: 14px;
     width: 20px;
     padding-top: 0px;
+}
+
+.table tbody{
+         text-transform: capitalize;
+}
+
+#btnExcel{
+    float: right;
 }
