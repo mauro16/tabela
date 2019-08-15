@@ -33,10 +33,10 @@
                         placeholder="Name" required>
 
                     <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="m" id="m"
-                        placeholder="Mundlich" onkeyup="VerticalM()" required>
+                        placeholder="Mundlich" onkeyup="VerticalM()" onchange="GetGesamt()" required>
 
                     <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="s"
-                        placeholder="Schriftlich" onkeyup="HorizonzalS()" onfocusout="GetGesemt()" required>
+                        placeholder="Schriftlich" onkeyup="HorizonzalS()" onchange="GetGesamt()" required>
 
                     <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="g" id="g" required>
 
@@ -242,9 +242,294 @@
                         <td class="row-g">C1<span>a</span></td>
                         <td class="row-g">C1<span>b</span></td>
                     </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">A2<span>c</span></td>
+                        <td class="row-g">A1<span>c</span></td>
+                        <td class="row-g">A2<span>a</span></td>
+                        <td class="row-g">A2<span>a</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">B1<span>a</span></td>
+                        <td class="row-g">A2<span>a</span></td>
+                        <td class="row-g">A2<span>a</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">B1<span>b</span></td>
+                        <td class="row-g">A2<span>a</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">B1<span>c</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">B2<span>a</span></td>
+                        <td class="row-g">A2<span>b</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">B2<span>b</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">B2<span>c</span></td>
+                        <td class="row-g">A2<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">C1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">C1<span>b</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">C1<span>c</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                        <td class="row-g">C2<span>b</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">C2<span>a</span></td>
+                        <td class="row-g">B1<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                        <td class="row-g">C2<span>b</span></td>
+                        <td class="row-g">C2<span>b</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">C2<span>b</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                        <td class="row-g">C2<span>b</span></td>
+                        <td class="row-g">C2<span>c</span></td>
+                    </tr>
+                    <tr>
+                        <th style="height:10">M</th>
+                        <td class="row-m">C2<span>c</span></td>
+                        <td class="row-g">B1<span>c</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>a</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>b</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">B2<span>c</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>a</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>b</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C1<span>c</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                        <td class="row-g">C2<span>a</span></td>
+                        <td class="row-g">C2<span>b</span></td>
+                        <td class="row-g">C2<span>b</span></td>
+                        <td class="row-g">C2<span>c</span></td>
+                    </tr>
                 </table>
             </div>
-
         </div>
 
         <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>

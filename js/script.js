@@ -2,9 +2,9 @@ var selectedRow = null;
 
 function onFormSubmit() {
     var formData = readFormData();
-    if (selectedRow == null)
-        insertNewRecord(formData)
-    else
+    if (selectedRow == null) {
+        insertNewRecord(formData);
+    } else
         updateRecord(formData);
     resetForm();
 }
@@ -237,12 +237,14 @@ function HorizonzalS() {
 
 // Function to observe the inputs and take the intersection
 
-$('#m, #s').on('blur', (e) => {
-    linhas = document.querySelectorAll('.searchtbl tr');
-    across = linhas[Vindex].cells[Hindex]
-    $('#g').val($(across).text());
-    $(across).addClass("highlighted");
-})
+function GetGesamt() {
+    $('#m, #s').on('change', (e) => {
+        linhas = document.querySelectorAll('.searchtbl tr');
+        across = linhas[Vindex].cells[Hindex]
+        $('#g').val($(across).text());
+        $(across).addClass("highlighted");
+    })
+}
 
 
 
