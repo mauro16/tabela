@@ -1,13 +1,18 @@
 var selectedRow = null;
-
 function onFormSubmit() {
     var formData = readFormData();
     if (selectedRow == null) {
         insertNewRecord(formData);
+        resetForm();
+        ClearTable()
     } else
         updateRecord(formData);
     resetForm();
+
+    ClearTable();
 }
+
+
 
 function readFormData() {
     var formData = {};
@@ -246,7 +251,18 @@ function GetGesamt() {
     })
 }
 
-
+//Limpa Table
+function ClearTable() {
+    $(document).ready(function (e) {
+        $("#m, #s,  #g")(function () {
+            if ($(this).val() == "") {
+                $(".searchtbl").find("tr").not("tr:first").find("td").removeClass('highlighted');
+                $(across).removeClass("highlighted");
+                return false;
+            }
+        })
+    });
+}
 
 //Botao Pesquisar
 
