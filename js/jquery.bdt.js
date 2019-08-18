@@ -62,7 +62,7 @@
     $.fn.bdt = function (options, callback) {
 
         var settings = $.extend({
-            pageRowCount: 10,
+            pageRowCount: 5,
             arrowDown: 'fa-angle-down',
             arrowUp: 'fa-angle-up',
             searchFormClass: 'pull-left search-form',
@@ -88,13 +88,13 @@
             searchFormClass = settings.searchFormClass;
             pageFieldText = settings.pageFieldText;
             searchFieldText = settings.searchFieldText;
-            
+
             var searchForm, entriesPerPageField;
 
             /**
              * search input field
              */
-            if(settings.showSearchForm == 1) {
+            if (settings.showSearchForm == 1) {
                 searchForm = $('<form/>')
                     .addClass(searchFormClass)
                     .attr('role', 'form')
@@ -110,7 +110,7 @@
                     );
             }
 
-            if(settings.showEntriesPerPageField == 1) {
+            if (settings.showEntriesPerPageField == 1) {
                 entriesPerPageField = $('<form/>')
                     .addClass('form-horizontal')
                     .attr('id', 'page-rows-form')
@@ -158,7 +158,7 @@
                             )
                     );
             }
-            
+
             obj.before(
                 $('<div/>')
                     .addClass('table-header')
@@ -183,9 +183,9 @@
                     .append(
                         $('<div/>')
                             .addClass('pull-left table-info')
-                            //.text('Showing 1 to 10 of 100 entries')
+                        //.text('Showing 1 to 10 of 100 entries')
                     )
-                    
+
             );
 
             if (tableBody.children('tr').length > pageRowCount) {
@@ -251,27 +251,27 @@
                     var addOrRemove = true;
 
                     th.click(function () {
-                        if(!$(this).hasClass('disable-sorting')) {
-                            if($(this).find('.sort-icon').hasClass(arrowDown)) {
+                        if (!$(this).hasClass('disable-sorting')) {
+                            if ($(this).find('.sort-icon').hasClass(arrowDown)) {
                                 $(this)
                                     .find('.sort-icon')
-                                    .removeClass( arrowDown )
+                                    .removeClass(arrowDown)
                                     .addClass(arrowUp);
 
                             } else {
                                 $(this)
                                     .find('.sort-icon')
-                                    .removeClass( arrowUp )
+                                    .removeClass(arrowUp)
                                     .addClass(arrowDown);
                             }
 
-                            if(oldIndex != thIndex) {
+                            if (oldIndex != thIndex) {
                                 obj.find('.sort-icon').removeClass(arrowDown);
                                 obj.find('.sort-icon').removeClass(arrowUp);
 
                                 $(this)
                                     .find('.sort-icon')
-                                    .toggleClass( arrowDown, addOrRemove );
+                                    .toggleClass(arrowDown, addOrRemove);
                             }
 
                             table.find('td').filter(function () {

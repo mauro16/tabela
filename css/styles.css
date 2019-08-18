@@ -24,13 +24,13 @@ body{
     }
 
     table.searchtbl th {
-        background-color: rgb(230, 61, 61);
-        border: 1px solid rgb(114, 224, 114);
-        color: white;
+        background-color: green;
+        border: 1px solid greenyellow;
+        color: greenyellow;
          font-family: 'Times New Roman', Times, serif
     }
     table.searchtbl td {
-        border: 1px solid red;
+        border: 1px solid green;
          font-size: 14px;
         font-family: Arial;
    

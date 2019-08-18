@@ -2,10 +2,13 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="./css/jquery.bdt.css" type="text/css" rel="stylesheet">
+    <link href="./css/styles.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,10 +36,10 @@
                         placeholder="Name" required>
 
                     <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="m" id="m"
-                        placeholder="Mundlich" onkeyup="VerticalM()" onchange="GetGesamt()" required>
+                        placeholder="Mundlich" required>
 
                     <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="s" id="s"
-                        placeholder="Schriftlich" onkeyup="HorizonzalS()" onchange="GetGesamt()" required>
+                        placeholder="Schriftlich" required>
 
                     <input type="text" class="form-control mb-2 mr-sm-2" maxlength="3" name="g" id="g" required>
 
@@ -79,6 +82,11 @@
                     </tbody>
 
                 </table>
+                <div class="pagination-container">
+                    <nav>
+                        <ul class="pagination"></ul>
+                    </nav>
+                </div>
             </div>
 
         </div>
@@ -86,6 +94,7 @@
         <!--TABELA NOTAS-->
         <div class="box2">
             <div class="container col-sm-6">
+                <p>Lllllll</p>
                 <table class='searchtbl'>
                     <tr>
                         <th style="width:5px;height:5px"></th>
@@ -530,17 +539,18 @@
                     </tr>
                 </table>
             </div>
-        </div>
 
+        </div>
         <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jquery.sortelements.js" type="text/javascript"></script>
-        <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
+        <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="./js/jquery.sortelements.js" type="text/javascript"></script>
+        <script src="./js/jquery.bdt.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/jquery.bdt.min.js" type="text/javascript"></script>
 </body>
+
 
 </html>
